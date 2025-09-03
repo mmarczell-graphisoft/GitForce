@@ -1,10 +1,11 @@
-﻿using System;
+﻿using GitForce.Main.Right.Panels;
+using System;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
 using System.Windows.Forms;
-using GitForce.Main.Right.Panels;
 
 namespace GitForce
 {
@@ -18,10 +19,11 @@ namespace GitForce
         /// </summary>
         private readonly string file;
 
-        /// <summary>
-        /// The current SHA string to initialize the list
-        /// </summary>
-        public string Sha { private get; set; }
+		/// <summary>
+		/// The current SHA string to initialize the list
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string Sha { private get; set; }
 
         /// <summary>
         /// 2 last recently selected SHA submits

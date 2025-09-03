@@ -1,10 +1,11 @@
-﻿using System;
+﻿using GitForce.Main.Right.Panels;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using GitForce.Main.Right.Panels;
 
 namespace GitForce
 {
@@ -14,11 +15,12 @@ namespace GitForce
     /// </summary>
     public partial class FormRecreateRepos : Form
     {
-        /// <summary>
-        /// Local store for the list of repo we are managing
-        /// Get and Set should not be called before this class has been instantiated
-        /// </summary>
-        public List<ClassRepo> Repos
+		/// <summary>
+		/// Local store for the list of repo we are managing
+		/// Get and Set should not be called before this class has been instantiated
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public List<ClassRepo> Repos
         {
             // We keep the repos in the listbox's item's Tag field
             // Get method reads them from the listbox and returns a regular list of repos

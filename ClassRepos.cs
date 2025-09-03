@@ -61,14 +61,18 @@ namespace GitForce
                 {
                     try
                     {
+                        
                         // Load list of repos and the default repo string into temporary objects
-                        BinaryFormatter rd = new BinaryFormatter();
-                        List<ClassRepo> newRepos = (List<ClassRepo>)rd.Deserialize(file);
-                        string defaultRepo = (string)rd.Deserialize(file);
+                        //BinaryFormatter rd = new BinaryFormatter();
+                        //List<ClassRepo> newRepos = (List<ClassRepo>)rd.Deserialize(file);
+                        //string defaultRepo = (string)rd.Deserialize(file);
 
-                        // WAR: Mono 2.6.7 does not support serialization of a HashSet. At the same time...
-                        // Quickly check that each repo is valid (find if at least one is not)
-                        bool allOK = true;
+						List<ClassRepo> newRepos = [];
+						string defaultRepo = "";
+
+						// WAR: Mono 2.6.7 does not support serialization of a HashSet. At the same time...
+						// Quickly check that each repo is valid (find if at least one is not)
+						bool allOK = true;
                         foreach (ClassRepo repo in newRepos)
                         {
                             allOK &= ClassUtils.DirStat(repo.Path) == ClassUtils.DirStatType.Git;
@@ -127,9 +131,9 @@ namespace GitForce
                 {
                     try
                     {
-                        BinaryFormatter wr = new BinaryFormatter();
-                        wr.Serialize(file, Repos);
-                        wr.Serialize(file, Default == null ? "" : Default.Path);
+                        //BinaryFormatter wr = new BinaryFormatter();
+                        //wr.Serialize(file, Repos);
+                        //wr.Serialize(file, Default == null ? "" : Default.Path);
                         return true;
                     }
                     catch (Exception ex)

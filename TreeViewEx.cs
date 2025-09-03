@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace GitForce
 {
@@ -40,19 +41,21 @@ namespace GitForce
         /// </summary>
         private readonly List<TreeNode> _selectedNodes;
 
-        /// <summary>
-        /// Public property of the TreeViewEx to return or set a list of selected nodes
-        /// </summary>
-        public List<TreeNode> SelectedNodes
+		/// <summary>
+		/// Public property of the TreeViewEx to return or set a list of selected nodes
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public List<TreeNode> SelectedNodes
         {
             get { return _selectedNodes; }
             set { SetSelectedNodes(value); }
         }
 
-        /// <summary>
-        /// Return a single selected node
-        /// </summary>
-        public new TreeNode SelectedNode { get; set; }
+		/// <summary>
+		/// Return a single selected node
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public new TreeNode SelectedNode { get; set; }
 
         /// <summary>
         /// TreeViewEx constructor

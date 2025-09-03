@@ -1,6 +1,7 @@
 using System;
-using System.Drawing;
 using System.Collections;
+using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GitForce
@@ -15,7 +16,8 @@ namespace GitForce
         private const string reorder = "Reorder";
 
         private bool allowRowReorder = true;
-        public bool AllowRowReorder
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public bool AllowRowReorder
         {
             get
             {
@@ -28,7 +30,8 @@ namespace GitForce
             }
         }
 
-        public new SortOrder Sorting
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public new SortOrder Sorting
         {
             get
             {

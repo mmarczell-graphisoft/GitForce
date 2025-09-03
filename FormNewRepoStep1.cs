@@ -1,14 +1,16 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace GitForce
 {
     public partial class FormNewRepoStep1 : Form
     {
-        /// <summary>
-        /// Describes source for a new repo: "empty", "local" or "remote"
-        /// </summary>
-        public string Type { get { return type; }
+		/// <summary>
+		/// Describes source for a new repo: "empty", "local" or "remote"
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string Type { get { return type; }
             set { type = value;
             if (type.Equals("empty")) rbEmpty.Checked = true;
             if (type.Equals("local")) rbLocal.Checked = true;
@@ -16,10 +18,11 @@ namespace GitForce
         }}
         private string type;
 
-        /// <summary>
-        /// Path to a local git repo
-        /// </summary>
-        public string Local {
+		/// <summary>
+		/// Path to a local git repo
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string Local {
             get { return textBoxLocal.Text.Trim(); }
             set { textBoxLocal.Text = value; }
         }

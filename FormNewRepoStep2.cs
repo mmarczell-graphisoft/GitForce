@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
@@ -6,25 +7,28 @@ namespace GitForce
 {
     public partial class FormNewRepoStep2 : Form
     {
-        /// <summary>
-        /// Destination directory to create a new repo
-        /// </summary>
-        public string Destination
+		/// <summary>
+		/// Destination directory to create a new repo
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string Destination
         {
             get { return ClassUtils.GetCombinedPath(textBoxRepoPath.Text.Trim(), textBoxProjectName.Text.Trim()); }
             set { textBoxRepoPath.Text = value; }
         }
 
-        /// <summary>
-        /// Project name
-        /// </summary>
-        public string ProjectName
+		/// <summary>
+		/// Project name
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string ProjectName
         {
             get { return textBoxProjectName.Text.Trim(); }
             set { textBoxProjectName.Text = value; }
         }
 
-        public string InitBranchName
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string InitBranchName
         {
             get { return textBoxInitBranchName.Text.Trim(); }
             set { textBoxInitBranchName.Text = value; }

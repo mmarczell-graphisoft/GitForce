@@ -1,19 +1,22 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace GitForce
 {
     public partial class FormHttpsAuth : Form
     {
-        /// <summary>
-        /// Keep user name and password fields as typed in the control
-        /// </summary>
-        public string Username
+		/// <summary>
+		/// Keep user name and password fields as typed in the control
+		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string Username
         {
             set { textUsername.Text = value.Trim(); }
             get { return textUsername.Text.Trim(); }
-        }
-        public string Password
+		}
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string Password
         {
             set { textPassword.Text = value.Trim(); }
             get { return textPassword.Text.Trim(); }

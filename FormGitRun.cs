@@ -242,17 +242,20 @@ namespace GitForce
         {
             if (e.Button == MouseButtons.Right)
             {
-                ContextMenu contextMenu = new ContextMenu();
+                // TODO ContextMenu is no longer supported. Use ContextMenuStrip instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+                //ContextMenu contextMenu = new ContextMenu();
 
-                MenuItem menuItemSelectAll = new MenuItem("Select All");
-                menuItemSelectAll.Click += SelectAllAction;
-                contextMenu.MenuItems.Add(menuItemSelectAll);
+                //// TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+                //MenuItem menuItemSelectAll = new MenuItem("Select All");
+                //menuItemSelectAll.Click += SelectAllAction;
+                //contextMenu.MenuItems.Add(menuItemSelectAll);
 
-                MenuItem menuItemCopy = new MenuItem("Copy");
-                menuItemCopy.Click += CopyAction;
-                contextMenu.MenuItems.Add(menuItemCopy);
+                //// TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+                //MenuItem menuItemCopy = new MenuItem("Copy");
+                //menuItemCopy.Click += CopyAction;
+                //contextMenu.MenuItems.Add(menuItemCopy);
 
-                textStdout.ContextMenu = contextMenu;
+                //textStdout.ContextMenu = contextMenu;
             }
         }
 
