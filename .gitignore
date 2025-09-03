@@ -67,6 +67,7 @@ local.properties
 #packages/
 
 # Visual C++ cache files
+.vs/
 ipch/
 *.aps
 *.ncb
